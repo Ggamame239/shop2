@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pladuk Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>Pladuk Shop</h1>
+    <nav>
+      <a href="#">หน้าแรก</a>
+      <a href="#">สินค้า</a>
+      <button onclick="toggleCart()">🛒 แสดง/ซ่อน ตะกร้า</button>
+    </nav>
+    <!-- ปุ่มเมนู -->
+    <button onclick="openMenu()" class="open-menu-btn">☰ เมนู</button>
+
+    <!-- เมนูด้านซ้าย -->
+    <div id="sideMenu" class="side-menu">
+      <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">×</a>
+      <h3>เมนูร้านค้า</h3>
+      <a href="singin.html">สมัครสมาชิก</a>
+      <a href="login.html">ลงชื่อเข้าใช้</a>
+      <a href="addmin.html">แอดมิน</a>
+
+    </div>
+    <button onclick="toggleTheme()" class="theme-toggle">🌓 เปลี่ยนธีม</button>
+
+
+  </header>
+
+  <main>
+    <section class="category-grid">
+      <div class="category-card" onclick="filterCategory('grow')" style="background-image: url('grow_bg.jpg');">
+        <img src="grow_logo.png" alt="Grow A Garden">
+        <h2>สินค้าและบริการ<br><span>Grow A Garden</span></h2>
+      </div>
+
+      <div class="category-card" onclick="filterCategory('Dead rail')"
+        style="background-image: url('deadrail_bg.jpg');">
+        <img src="deadrail_logo.png" alt="Dead Rail">
+        <h2>สินค้าและบริการ<br><span>Dead Rail</span></h2>
+      </div>
+
+      <div class="category-card" onclick="filterCategory('Blox Fruit')" style="background-image: url('all_bg.jpg');">
+        <img src="blox_logo.png" alt="Blox Fruit">
+        <h2>สินค้าและบริการ<br><span>Blox Fruit</span></h2>
+      </div>
+    </section>
+
+    <section class="product-grid">
+      <div class="product-card" data-category="Dead rail">
+        <img src="bound.png" alt="Dead Rail" />
+        <h2>รับฟาร์ม 100 Bound</h2>
+        <p>ราคา: 30 บาท</p>
+        <button onclick="addToCart('รับฟาร์ม', 30)">เพิ่มลงตะกร้า</button>
+      </div>
+      <div class="product-card" data-category="grow">
+        <img src="Grow_afk.png" alt="Grow" />
+        <h2>AFK grow a Garden 1 ชม</h2>
+        <p>ราคา: 10 บาท</p>
+        <button onclick="addToCart('AFK grow a Garden', 10)">เพิ่มลงตะกร้า</button>
+      </div>
+      <div class="product-card" data-category="grow">
+        <img src="accout.png" alt="Grow" />
+        <h2>ขายรหัส Grow a Garden</h2>
+        <p>ราคา: 30 บาท</p>
+        <button onclick="addToCart('ขายรหัส Grow a Garden', 30)">เพิ่มลงตะกร้า</button>
+      </div>
+      <div class="product-card" data-category="Blox Fruit">
+        <img src="1m_blox.png" alt="Grow" />
+        <h2>รับฟาร์มเงิน blox fruit 1m</h2>
+        <p>ราคา: 50 บาท</p>
+        <button onclick="addToCart('รับฟาร์มเงิน blox fruit 1m', 50)">เพิ่มลงตะกร้า</button>
+      </div>
+    </section>
+
+    <section class="cart" id="cart-section">
+      <h2>🛍 ตะกร้าสินค้า</h2>
+      <ul id="cart-list"></ul>
+      <p id="total">รวม: 0 บาท</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Roblox Shop | ติดต่อ: admin@robloxshop.com</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
